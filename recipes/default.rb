@@ -34,11 +34,11 @@ if ignore_blanks
    restore_script += " --ignoreBlanks"
 end
 
-restore_script += " --file #{file}"
-
 if tail
   restore_script += " #{tail}"
 end
+
+restore_script += " #{file}"
 
 execute "run restore script" do
   command restore_script
